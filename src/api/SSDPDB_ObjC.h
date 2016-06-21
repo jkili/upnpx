@@ -63,6 +63,7 @@
 @property (NS_NONATOMIC_IOSONLY, readonly) int startSSDP;
 @property (NS_NONATOMIC_IOSONLY, readonly) int stopSSDP;
 @property (NS_NONATOMIC_IOSONLY, readonly) int searchSSDP;
+-(int)search:(const char*)target;
 @property (NS_NONATOMIC_IOSONLY, readonly) int searchForMediaServer;
 @property (NS_NONATOMIC_IOSONLY, readonly) int searchForMediaRenderer;
 @property (NS_NONATOMIC_IOSONLY, readonly) int searchForContentDirectory;

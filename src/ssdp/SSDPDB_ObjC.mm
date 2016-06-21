@@ -126,6 +126,10 @@ private:
     return UPNP::GetInstance()->GetSSDP()->NotifyByeBye();
 }
 
+-(int)search:(const char*)target {
+    return UPNP::GetInstance()->GetSSDP()->SearchST(target);
+}
+
 -(int)searchSSDP{
     return UPNP::GetInstance()->GetSSDP()->Search();
 }

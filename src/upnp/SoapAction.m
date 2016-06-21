@@ -40,6 +40,7 @@
 #import "SoapActionsContentDirectory1.h"
 #import "SoapActionsRenderingControl1.h"
 #import "SoapActionsSwitchPower1.h"
+#import "SoapActionsWemoSwitchPower1.h"
 #import "SoapActionsDimming1.h"
 #import "SoapActionsWANIPConnection1.h"
 #import "SoapActionsWANPPPConnection1.h"
@@ -236,6 +237,12 @@
                       ];
     }else if([urn isEqualToString:@"urn:schemas-upnp-org:service:WANPPPConnection:1"]){
         soapaction = [[SoapActionsWANPPPConnection1 alloc]
+                      initWithActionURL:[NSURL URLWithString:controlURL relativeToURL:baseURL]
+                      eventURL:[NSURL URLWithString:eventURL relativeToURL:baseURL]
+                      upnpnamespace:urn
+                      ];
+    }else if([urn isEqualToString:@"urn:Belkin:service:basicevent:1"]){
+        soapaction = [[SoapActionsWemoSwitchPower1 alloc]
                       initWithActionURL:[NSURL URLWithString:controlURL relativeToURL:baseURL]
                       eventURL:[NSURL URLWithString:eventURL relativeToURL:baseURL]
                       upnpnamespace:urn

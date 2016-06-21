@@ -62,6 +62,7 @@ public:
     int RemoveObserver(SSDPObserver* observer);
     int Advertise();
     int Search();
+    int SearchST(const char* target);
     int SearchForMediaServer();
     int SearchForMediaRenderer();
     int SearchForContentDirectory();

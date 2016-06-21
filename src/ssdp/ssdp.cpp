@@ -255,6 +255,9 @@ int SSDP::NotifyByeBye(){
 int SSDP::Search(){
     return this->SendSearchRequest("ssdp:all");
 }
+int SSDP::SearchST(const char* target){
+    return this->SendSearchRequest(target);
+}
 
 int SSDP::SearchForMediaServer(){
     return this->SendSearchRequest("urn:schemas-upnp-org:device:MediaServer:1");

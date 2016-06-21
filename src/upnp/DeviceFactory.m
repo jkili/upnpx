@@ -47,7 +47,7 @@
 #import "LAN1Device.h"   
 #import "TelephonyClient1Device.h"
 #import "TelephonyServer1Device.h"
-
+#import "WemoControllerDevice.h"
 @implementation DeviceFactory
 
 -(BasicUPnPDevice*)allocDeviceForSSDPDevice:(SSDPDBDevice_ObjC*)ssdp{
@@ -77,6 +77,8 @@
         device =  [[TelephonyClient1Device alloc] initWithSSDPDevice:ssdp];
     }else if([[ssdp urn] isEqualToString:@"urn:schemas-upnp-org:device:TelephonyServer:1"]){
         device =  [[TelephonyServer1Device alloc] initWithSSDPDevice:ssdp];
+    }else if([[ssdp urn] isEqualToString:@"urn:Belkin:device:controllee:1"]){
+        device =  [[WemoControllerDevice alloc] initWithSSDPDevice:ssdp];
     }else{
         device =  [[BasicUPnPDevice alloc] initWithSSDPDevice:ssdp];
     }
